@@ -34,6 +34,14 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        user = User(
+            firstName = "Admin",
+            lastName = "Admin",
+            gold = 0,
+            balance = 0,
+            password = "1",
+            email = "admin@gmail.com"
+        )
         binding.apply {
             loginButton.setOnClickListener {
                 if(arguments != null){
@@ -77,9 +85,9 @@ class LoginFragment : Fragment() {
         } else toast( "Akun tidak ditemukan")
     }
     private fun goToHomeFragment() {
-        if (user != null) {
-            DummyObject.user.add(this.user as User)
-        }
+//        if (user != null) {
+//            DummyObject.user.add(this.user as User)
+//        }
         findNavController().navigate(R.id.action_loginFragment_to_homeFragment,
             null,
             NavOptions.Builder().setPopUpTo(R.id.nav_graph, true).build()
