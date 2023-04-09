@@ -36,6 +36,13 @@
         android:orientation="horizontal"
         >
 
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_poster"
             android:layout_width="40dp"
@@ -81,14 +88,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="6dp"
                 android:layout_marginTop="6dp"
-                tools:text="Username" />
+                tools:text="User name" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/tv_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity=""
             android:layout_marginTop="24dp"
             android:layout_marginEnd="24dp"
             android:textColor="@color/accent"
