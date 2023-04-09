@@ -5,8 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.enigmacamp.livecodegoldmarket.databinding.FragmentHomeBinding
+import com.enigmacamp.livecodegoldmarket.model.User
 
 class HomeFragment : Fragment() {
+    private lateinit var binding: FragmentHomeBinding
+    private var goldSellPrice = 1021000
+    private var goldBuyPrice = 981000
+    private lateinit var user: User
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
