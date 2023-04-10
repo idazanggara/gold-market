@@ -30,10 +30,16 @@ class HistoryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.let {
-            DummyObject.history.first().apply {
-                it.tvItem.text = status
-                it.tvUser.text = name
-                it.tvPrice.text = "Rp $amount"
+            it.tvItem.text = "Top Up"
+            it.tvUser.text = "@Username"
+            it.tvPrice.text = "Rp 100.000"
+
+            if (DummyObject.history.isNotEmpty()){
+                DummyObject.history.first().apply {
+                    it.tvItem.text = status
+                    it.tvUser.text = name
+                    it.tvPrice.text = "Rp $amount"
+                }
             }
         }
     }
