@@ -41,7 +41,8 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.uploadIdButton.setOnClickListener {
             val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-            resultLauncher.launch(intent)
+//            resultLauncher.launch(intent)
+            startActivity(intent)
         }
     }
 

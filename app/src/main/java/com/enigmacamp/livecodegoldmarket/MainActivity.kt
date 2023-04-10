@@ -10,6 +10,7 @@ import com.enigmacamp.livecodegoldmarket.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private var bundle = Bundle()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -32,7 +33,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.homeMenuFragment -> {
                     navController.navigate(
                         R.id.homeFragment,
-                        null,
+                        bundle,
                         NavOptions.Builder().setPopUpTo(
                             R.id.nav_graph,
                             true
@@ -43,7 +44,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.historyMenuFragment -> {
                     navController.navigate(
                         R.id.historyFragment,
-                        null,
+                        bundle,
                         NavOptions.Builder().setPopUpTo(R.id.nav_graph, true).build()
                     )
                     true
@@ -51,7 +52,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.profileMenuFragment -> {
                     navController.navigate(
                         R.id.profileFragment,
-                        null,
+                        bundle,
                         NavOptions.Builder().setPopUpTo(R.id.nav_graph, true).build()
                     )
                     true

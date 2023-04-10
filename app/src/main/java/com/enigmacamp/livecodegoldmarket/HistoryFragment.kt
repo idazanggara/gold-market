@@ -5,8 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.enigmacamp.livecodegoldmarket.databinding.FragmentHistoryBinding
+import com.enigmacamp.livecodegoldmarket.model.History
+import com.enigmacamp.livecodegoldmarket.model.User
+import com.enigmacamp.livecodegoldmarket.utils.DummyObject
 
 class HistoryFragment : Fragment() {
+    private lateinit var binding: FragmentHistoryBinding
+    private lateinit var history: History
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,8 +22,20 @@ class HistoryFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        binding =  FragmentHistoryBinding.inflate(layoutInflater)
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_history, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.let {
+            DummyObject.history.first().apply {
+                it.tvItem.text = status
+                it.tvUser.text = name
+                it.tvPrice.text = "Rp $amount"
+            }
+        }
     }
 
     companion object {
