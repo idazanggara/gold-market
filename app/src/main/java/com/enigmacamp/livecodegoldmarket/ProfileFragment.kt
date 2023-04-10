@@ -15,12 +15,12 @@ import com.enigmacamp.livecodegoldmarket.databinding.FragmentProfileBinding
 class ProfileFragment : Fragment() {
 
     private lateinit var binding: FragmentProfileBinding
-    private val resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult(), { result ->
-        if(result.resultCode == Activity.RESULT_OK) {
+    private val resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+        if (result.resultCode == Activity.RESULT_OK) {
             val data: Intent? = result.data
             Toast.makeText(requireContext(), "Sukses open camera", Toast.LENGTH_LONG).show()
         }
-    })
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
